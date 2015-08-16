@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA6D83761B8032C200F5C256 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6D83751B8032C200F5C256 /* Person.swift */; };
 		CAF7BEE61B7DCBC100F8D043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF7BEE51B7DCBC100F8D043 /* AppDelegate.swift */; };
 		CAF7BEE81B7DCBC100F8D043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF7BEE71B7DCBC100F8D043 /* ViewController.swift */; };
 		CAF7BEEB1B7DCBC100F8D043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF7BEE91B7DCBC100F8D043 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA6D83751B8032C200F5C256 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
 		CAF7BEE01B7DCBC100F8D043 /* Names to Faces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Names to Faces.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF7BEE41B7DCBC100F8D043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF7BEE51B7DCBC100F8D043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		CAF7BEF51B7DCBC100F8D043 /* Names to FacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Names to FacesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF7BEFA1B7DCBC100F8D043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF7BEFB1B7DCBC100F8D043 /* Names_to_FacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names_to_FacesTests.swift; sourceTree = "<group>"; };
-		CAF7BF051B7EBEEE00F8D043 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		CAF7BF051B7EBEEE00F8D043 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonCell.swift; path = ../PersonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 		CAF7BED71B7DCBC100F8D043 = {
 			isa = PBXGroup;
 			children = (
-				CAF7BF051B7EBEEE00F8D043 /* PersonCell.swift */,
 				CAF7BEE21B7DCBC100F8D043 /* Names to Faces */,
 				CAF7BEF81B7DCBC100F8D043 /* Names to FacesTests */,
 				CAF7BEE11B7DCBC100F8D043 /* Products */,
@@ -82,6 +83,8 @@
 			children = (
 				CAF7BEE51B7DCBC100F8D043 /* AppDelegate.swift */,
 				CAF7BEE71B7DCBC100F8D043 /* ViewController.swift */,
+				CA6D83751B8032C200F5C256 /* Person.swift */,
+				CAF7BF051B7EBEEE00F8D043 /* PersonCell.swift */,
 				CAF7BEE91B7DCBC100F8D043 /* Main.storyboard */,
 				CAF7BEEC1B7DCBC100F8D043 /* Images.xcassets */,
 				CAF7BEEE1B7DCBC100F8D043 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				CAF7BF061B7EBEEE00F8D043 /* PersonCell.swift in Sources */,
 				CAF7BEE81B7DCBC100F8D043 /* ViewController.swift in Sources */,
+				CA6D83761B8032C200F5C256 /* Person.swift in Sources */,
 				CAF7BEE61B7DCBC100F8D043 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +417,7 @@
 				CAF7BF011B7DCBC100F8D043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAF7BF021B7DCBC100F8D043 /* Build configuration list for PBXNativeTarget "Names to FacesTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				CAF7BF041B7DCBC100F8D043 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

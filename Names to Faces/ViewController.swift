@@ -77,7 +77,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let rename = UIAlertAction(title: "Rename", style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
                 self.renamePicture(collectionView, indexPath: indexPath)
             })
-        let delete = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: nil)
+        let delete = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: { (actionSheetController) -> Void in
+            self.delete(collectionView, indexPath: indexPath)
+        })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         alert.addAction(rename)
         alert.addAction(delete)
@@ -101,6 +103,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             })
         
         presentViewController(ac, animated: true, completion: nil)
+    }
+    
+    func delete(collectionView: UICollectionView, indexPath: NSIndexPath) {
+        people.removeAtIndex(indexPath.item)
+        collectionView.reloadData()
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func getDocumentsDirectory() -> String {

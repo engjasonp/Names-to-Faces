@@ -73,8 +73,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let person = people[indexPath.item]
+        let alert = UIAlertController(title: "Options", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let rename = UIAlertAction(title: "Rename", style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
+                self.renamePicture(collectionView, indexPath: indexPath)
+            })
+        let delete = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(rename)
+        alert.addAction(delete)
+        alert.addAction(cancel)
         
+        presentViewController(alert, animated: true, completion: nil)
+        }
+    
+    func renamePicture (collectionView: UICollectionView, indexPath: NSIndexPath) {
+        let person = people[indexPath.item]
         let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .Alert)
         ac.addTextFieldWithConfigurationHandler(nil)
         

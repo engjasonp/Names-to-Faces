@@ -92,9 +92,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let person = people[indexPath.item]
         let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .Alert)
         ac.addTextFieldWithConfigurationHandler(nil)
-        
         ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
         ac.addAction(UIAlertAction(title: "OK", style: .Default) { [unowned self, ac] _ in
             let newName = ac.textFields![0] as! UITextField
             person.name = newName.text

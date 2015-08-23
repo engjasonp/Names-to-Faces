@@ -15,6 +15,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addNewPerson")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let savedPeople = defaults.objectForKey("people") as? NSData {
+            people = NSKeyedUnarchiver.unarchiveObjectWithData(savedPeople) as! [Person]
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,6 +75,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.reloadData()
         
         dismissViewControllerAnimated(true, completion: nil)
+        save()
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -85,6 +91,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         alert.addAction(delete)
         alert.addAction(cancel)
         
+        save()
         presentViewController(alert, animated: true, completion: nil)
         }
     
@@ -98,6 +105,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             person.name = newName.text
             
             self.collectionView.reloadData()
+            self.save()
             })
         
         presentViewController(ac, animated: true, completion: nil)
@@ -113,6 +121,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as! [String]
         let documentsDirectory = paths[0]
         return documentsDirectory
+    }
+    
+    func save() {
+        let savedData = NSKeyedArchiver.archivedDataWithRootObject(people)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(savedData, forKey: "people")
     }
 
     override func didReceiveMemoryWarning() {
